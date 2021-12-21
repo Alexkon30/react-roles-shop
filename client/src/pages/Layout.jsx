@@ -2,10 +2,11 @@ import React from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import {loginSlice} from '../store/reducers/LoginSlice'
 import { useDispatch } from 'react-redux'
+import { Footer } from '../components/Footer'
 
 export const Layout = () => {
   const dispatch = useDispatch()
-  const {changeAuth, changeRole} = loginSlice.actions
+  const {setAuth, setRole} = loginSlice.actions
 
   return (
     <>
@@ -14,15 +15,16 @@ export const Layout = () => {
           <Link to='/'>user</Link>
           <Link to='admin'>admin</Link>
           <Link to='login'>login</Link>
-          <input type="button" value="Login"  onClick={() => dispatch(changeAuth(true))}/>
-          <input type="button" value="Logout"  onClick={() => dispatch(changeAuth(false))}/>
-          <input type="button" value="userRole"  onClick={() => dispatch(changeRole('user'))}/>
-          <input type="button" value="adminRole"  onClick={() => dispatch(changeRole('admin'))}/>
+          <input type="button" value="Login"  onClick={() => dispatch(setAuth(true))}/>
+          <input type="button" value="Logout"  onClick={() => dispatch(setAuth(false))}/>
+          <input type="button" value="userRole"  onClick={() => dispatch(setRole('user'))}/>
+          <input type="button" value="adminRole"  onClick={() => dispatch(setRole('admin'))}/>
         </nav>
       </header>
       <main>
         <Outlet />
       </main>
+      <Footer/>
     </>
   )
 }

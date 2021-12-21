@@ -3,6 +3,7 @@ import userController from "../controllers/userController.js";
 
 const userRouter = new Router()
 
-userRouter.get('/', userController.check)
+userRouter.get('/', userController.fetchAllGoods)
+userRouter.post('/', userController.newOrder)
 
 export default userRouter

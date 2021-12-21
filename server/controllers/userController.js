@@ -1,10 +1,16 @@
-import Product from '../models/ProductCart.js'
+import Product from '../models/ProductCard.js'
 
 class userController {
-    async check(req, res) {
+    async fetchAllGoods(req, res) {
         let products = await Product.find()
 
         res.send({products})
+    }
+
+    async newOrder(req, res) {
+        console.log(req.body)
+
+        res.send()
     }
 }
 

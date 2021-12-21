@@ -1,10 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit'
+import { fetchGoods } from './ActionCreators'
 
 const initialState = {
-    user: {},
     products: [],
     basket: [],
-    orders: []
+    error: '',
+    isLoading: false
 }
 
 export const userSlice = createSlice({
@@ -23,6 +24,20 @@ export const userSlice = createSlice({
         setProducts(state, action) {
             state.products = action.payload
         }
+    },
+    extraReducers: {
+      [fetchGoods.fulfilled.type]: (state, action) => {
+        state.isLoading = false;
+        state.error = '';
+        state.products = action.payload
+      },
+      [fetchGoods.pending.type]: (state) => {
+        state.isLoading = true
+      },
+      [fetchGoods.rejected.type]: (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload
+      }
     }
 })
 

@@ -1,22 +1,28 @@
 import {createSlice} from '@reduxjs/toolkit'
+import { fetchGoods } from './ActionCreators'
 
 const initialState = {
-    isAuth: false,
+    isAuth: true,
     role: 'user',
+    error: '',
+    isLoading: false
 }
 
 export const loginSlice = createSlice({
     name: 'login',
     initialState,
     reducers: {
-        changeAuth(state, action) {
+        setAuth(state, action) {
             state.isAuth = action.payload
         },
-        changeRole(state, action) {
+        setRole(state, action) {
           state.role = action.payload
         },
         resetRole(state) {
           state.role = null
+        },
+        setError(state, action) {
+          state.error = action.payload
         }
     }
 })

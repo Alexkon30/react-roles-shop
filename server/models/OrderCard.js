@@ -7,7 +7,7 @@ const Order = new mongoose.Schema({
         email: {type: String},
     },
     goods: [
-        {id: {type: String}, 
+        {title: {type: String}, 
         count: {type: Number}}
     ],
     isFinished: {type: Boolean},

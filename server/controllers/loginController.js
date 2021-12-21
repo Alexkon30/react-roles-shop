@@ -1,4 +1,4 @@
-import User from '../models/UserCart.js'
+import User from '../models/UserCard.js'
 
 class loginController {
     checkAuth(req, res) {
