@@ -1,8 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
+    user: {},
     products: [],
-    order: [],
+    basket: [],
+    orders: []
 }
 
 export const userSlice = createSlice({
@@ -10,13 +12,13 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         addProduct(state, action) {
-            state.order.push(action.payload)
+            state.basket.push(action.payload)
         },
         deleteProduct(state, action) {
-            state.order = state.order.filter(item => item.id !== action.payload)
+            state.basket = state.basket.filter(item => item.id !== action.payload)
         },
         resetBasket(state, ) {
-            state.order = []
+            state.basket = []
         },
         setProducts(state, action) {
             state.products = action.payload

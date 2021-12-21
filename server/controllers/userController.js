@@ -1,8 +1,10 @@
-
+import Product from '../models/ProductCart.js'
 
 class userController {
-    check(req, res) {
-        res.send({message: 'user ok'})
+    async check(req, res) {
+        let products = await Product.find()
+
+        res.send({products})
     }
 }
 
