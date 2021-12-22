@@ -19,15 +19,16 @@ app
     .use('/admin', adminRouter)
 
 
-mongoose.connect(config.get('dbUrl'), {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-}).then(
-    () => {
-        app.listen(PORT, () => {
-            console.log('server was started on: ', PORT);
+mongoose
+    .connect(config.get('dbUrl'), {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+    })
+    .then(() => {
+            app.listen(PORT, () => {
+                console.log('server was started on: ', PORT);
+            })
         })
-    }
-).catch(err => {
-    console.log(err.message)
-})
+    .catch(err => {
+        console.log(err.message)
+    })

@@ -28,8 +28,12 @@ export const userSlice = createSlice({
     extraReducers: {
       [fetchGoods.fulfilled.type]: (state, action) => {
         state.isLoading = false;
-        state.error = '';
-        state.products = action.payload
+
+        if (action.payload.success === true) {
+          state.products = action.payload.products
+        } else if (action.payload.success === false) {
+          state.error = action.payload.message;
+        }
       },
       [fetchGoods.pending.type]: (state) => {
         state.isLoading = true
@@ -39,10 +43,15 @@ export const userSlice = createSlice({
         state.error = action.payload
       },
 
-      [newOrder.fulfilled.type]: (state) => {
+      [newOrder.fulfilled.type]: (state, action) => {
           state.isLoading = false
-          state.error = ''
-          state.basket = []
+
+          if (action.payload.success === true) {
+            state.error = ''
+            state.basket = []
+          } else if (action.payload.success === false) {
+            state.error = action.payload.message
+          }
       },
       [newOrder.pending.type]: (state) => {
           state.isLoading = true

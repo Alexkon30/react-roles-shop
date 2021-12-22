@@ -14,8 +14,12 @@ export const adminSlice = createSlice({
     extraReducers: {
         [fetchOrders.fulfilled.type]: (state, action) => {
             state.isLoading = false;
-            state.error = '';
-            state.orders = action.payload
+            if (action.payload.success === true) {
+                state.error = '';
+                state.orders = action.payload.orders
+            } else if (action.payload.success === false) {
+                state.error = action.payload.message
+            }
         },
         [fetchOrders.pending.type]: (state) => {
             state.isLoading = true
@@ -27,12 +31,16 @@ export const adminSlice = createSlice({
 
         [changeOrderStatus.fulfilled.type]: (state, action) => {
             state.isLoading = false
-            state.error = ''
-            state.orders.forEach(order => {
-                if(order._id === action.payload) {
-                    order.isFinished = !order.isFinished
-                }
-            })
+            if (action.payload.success === true) {
+                state.error = '';
+                state.orders.forEach(order => {
+                    if(order._id === action.payload.id) {
+                        order.isFinished = !order.isFinished
+                    }
+                })
+            } else if (action.payload.success === false) {
+                state.error = action.payload.message
+            }
         },
         [changeOrderStatus.pending.type]: (state) => {
             state.isLoading = true

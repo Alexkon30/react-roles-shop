@@ -2,15 +2,22 @@ import Product from '../models/ProductCard.js'
 import Order from '../models/OrderCard.js'
 
 class userController {
-    async fetchAllGoods(req, res) {
-        let products = await Product.find()
-        res.send({products})
+    async fetchAllGoods(_, res) {
+        try {
+            let products = await Product.find()
+            res.send({success: true, products})
+        } catch(e) {
+            res.send({success: false, message: 'Error with DB'})
+        }
     }
 
     async newOrder(req, res) {
-        console.log(req.body)
-        await Order.create(req.body)
-        res.send()
+        try {
+            await Order.create(req.body)
+            res.send({success: true})
+        } catch (e) {
+            res.send({success: false, message: 'Error with DB'})
+        }
     }
 }
 

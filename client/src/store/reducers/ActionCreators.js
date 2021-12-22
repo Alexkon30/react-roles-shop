@@ -5,8 +5,7 @@ export const fetchGoods = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await fetch('http://192.168.1.5:5000')
-      const result = await response.json()
-      return result.products
+      return await response.json()
     } catch (e) {
       thunkAPI.rejectWithValue('Goods loading failure')
     }
@@ -36,8 +35,7 @@ export const fetchOrders = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await fetch('http://192.168.1.5:5000/admin')
-      const result = await response.json()
-      return result.orders
+      return await response.json()
     } catch (e) {
       thunkAPI.rejectWithValue('Orders loading failure')
     }
@@ -55,10 +53,45 @@ export const changeOrderStatus = createAsyncThunk(
         },
         body: JSON.stringify({...data})
       })
-      const result = await response.json()
-      return result.id
+      return await response.json()
     } catch (e) {
       thunkAPI.rejectWithValue('Changing failure')
+    }
+  }
+)
+
+export const registerUser = createAsyncThunk(
+  'login/registerUser',
+  async (data, thunkAPI) => {
+    try {
+      const response = await fetch('http://192.168.1.5:5000/login/new', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({...data})
+      })
+      return await response.json()
+    } catch (e) {
+      thunkAPI.rejectWithValue('Register failure')
+    }
+  }
+)
+
+export const loginUser = createAsyncThunk(
+  'login/registerUser',
+  async (data, thunkAPI) => {
+    try {
+      const response = await fetch('http://192.168.1.5:5000/login/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({...data})
+      })
+      return await response.json()
+    } catch (e) {
+      thunkAPI.rejectWithValue('Login failure')
     }
   }
 )
