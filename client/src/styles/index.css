@@ -19,12 +19,7 @@ header {
 main {
   min-height: 90vh;
   background-color: lightgray;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 50px 0 100px;
 }
 
 .form {
@@ -78,9 +73,9 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
 }
 
@@ -136,14 +131,18 @@ main {
       justify-content: space-around;
 }
 
-.list {
+.card__info p {
+  word-wrap: break-word;
+}
+
+.product-list {
   width: 80%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-bottom: 100px;
+  margin: 0 auto;
 }
 
 .modal {
@@ -162,6 +161,28 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.modal__list {
+  text-align: end;
+}
+
+.modal__list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal__list li span:last-child {
+  margin-left: 10px;
+}
+
+.modal__list li i:hover {
+  cursor: pointer;
+  color: red;
 }
 
 .cancel-btn {
@@ -185,5 +206,101 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: teal;
+}
+
+.admin-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+}
+
+.admin-panel aside {
+  width: 15%;
+  border-right: 1px solid teal;
+}
+
+.admin-panel aside p {
+  padding: 10px;
+  border: 1px solid teal;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  position: relative;
+  left: 1px;
+}
+
+.admin-panel aside p.active {
+  background-color: teal;
+}
+
+.admin-panel section {
+  padding-left: 20px;
+  width: 85%;
+}
+
+.admin-panel section table {
+  width: 100%;
+}
+
+.admin-panel section table tr {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5fr 12% 12% 12% 12%;
+      grid-template-columns: 5fr 12% 12% 12% 12%;
+}
+
+.admin-panel section table tr td,
+.admin-panel section table tr th {
+  word-wrap: break-word;
+  padding: 10px;
+  border: 1px solid teal;
+}
+
+.admin-panel section table tr td:not(:first-child),
+.admin-panel section table tr th:not(:first-child) {
+  text-align: center;
+}
+
+.admin-panel section table ol {
+  list-style-position: inside;
+}
+
+.admin-panel section i {
+  border-radius: 50%;
+}
+
+.admin-panel section i:hover {
+  cursor: pointer;
+}
+
+.admin-panel section i.finished {
+  color: green;
+}
+
+.admin-panel section i.finished:hover {
+  color: red;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.admin-panel section i.inprocess {
+  color: red;
+}
+
+.admin-panel section i.inprocess:hover {
+  color: green;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=index.css.map */

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchGoods } from '../store/reducers/ActionCreators'
 import {ProductCard} from '../components/ProductCard'
-import {Modal} from '../components/Modal'
+import {ModalForm} from '../components/ModalForm'
 
 export const UserPage = () => {
   const [isActiveModal, setIsActiveModal] = useState(false)
@@ -18,10 +18,10 @@ export const UserPage = () => {
 
     return (
         <>
-        <div className='list'>
+        <div className='product-list'>
             {products.map(item => <ProductCard key={item.id} product={item} setIsActiveModal={setIsActiveModal}/>)}
         </div>
-        {isActiveModal && <Modal setIsActive={setIsActiveModal}/>}
+        {isActiveModal && <ModalForm setIsActive={setIsActiveModal}/>}
         </>
 
     )

@@ -1,16 +1,12 @@
 import mongoose from 'mongoose'
 
 const Order = new mongoose.Schema({
-    buyerInfo: {
-        name: {type: String},
-        phone: {type: String},
-        email: {type: String},
-    },
-    goods: [
-        {title: {type: String}, 
-        count: {type: Number}}
-    ],
-    isFinished: {type: Boolean},
+    username: {type: String},
+    email: {type: String},
+    phone: {type: String},
+    address: {type: String},
+    goods: [{type: String}],
+    isFinished: {type: Boolean, default: false},
 })
 
 export default mongoose.model('Order', Order)
