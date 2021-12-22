@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "cd client && npm i && cd ../server && npm i",
+    "start": "concurrently -k \"cd client && npm start\" \"cd server && node index.js\""
   },
   "keywords": [],
   "author": "",
