@@ -1,5 +1,7 @@
 import Order from '../models/OrderCard.js'
 import nodemailer from 'nodemailer'
+require('dotenv').config()
+
 
 class adminController {
     async fetchAllOrders(_, res) {
@@ -21,13 +23,13 @@ class adminController {
                     port: 587,
                     secure: false,
                     auth: {
-                        user: 'AlexKon243546@gmail.com',
-                        pass: 'TestFront94.',
+                        user: process.env.USER,
+                        pass: process.env.PASS,
                     },
                 });
 
                 transporter.sendMail({
-                    from: 'AlexKon243546@gmail.com',
+                    from: process.env.USER,
                     to: result.email,
                     subject: 'New order',
                     text: '',

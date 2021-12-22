@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "cd client && npm i && cd ../server && npm i",
     "start": "concurrently -k \"cd client && npm start\" \"cd server && node index.js\""
   },
   "keywords": [],
