@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { registerUser } from '../store/reducers/ActionCreators'
 import { loginSlice } from '../store/reducers/LoginSlice'
+import '../styles/Form.css'
+import '../styles/ErrorContainer.css'
+
 
 export const RegisterForm = ({ setMode }) => {
     const dispatch = useDispatch()

@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {userSlice} from '../store/reducers/UserSlice'
+import { userSlice } from '../store/reducers/UserSlice'
+import '../styles/Card.css'
 
 export const ProductCard = ({ product, setIsActiveModal }) => {
   const dispatch = useDispatch()
   const { basket } = useSelector(state => state.userReducer)
-  const {addProduct} = userSlice.actions
+  const { addProduct } = userSlice.actions
 
   const onBasket = useMemo(() => {
     return basket.some(item => item.id === product.id)
@@ -19,10 +20,10 @@ export const ProductCard = ({ product, setIsActiveModal }) => {
       </div>
       <div className="card__info">
         <p>{product.title}</p>
-        <p>Price: {product.price}</p>
+        <p>Price: {product.price} $</p>
         {onBasket
-          ? <input type="button" value="Buy" onClick={() => setIsActiveModal(true)}/>
-          : <input type="button" value="Add" onClick={() => dispatch(addProduct(product))}/>}
+          ? <input type="button" value="Buy" onClick={() => setIsActiveModal(true)} />
+          : <input type="button" value="Add" onClick={() => dispatch(addProduct(product))} />}
       </div>
     </div>
   )

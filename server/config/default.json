@@ -1,0 +1,4 @@
+{
+ "dbUrl": "mongodb+srv://pskUser:pskPass@cluster0.f72dl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+}
+

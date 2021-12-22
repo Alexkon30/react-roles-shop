@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { loginSlice } from '../store/reducers/LoginSlice'
 import { loginUser } from '../store/reducers/ActionCreators'
+import '../styles/Form.css'
+import '../styles/ErrorContainer.css'
 
 export const LoginForm = ({ setMode }) => {
     const dispatch = useDispatch()
     const { error } = useSelector(state => state.loginReducer)
-    const {setError} = loginSlice.actions
+    const { setError } = loginSlice.actions
     const [loginInfo, setLoginInfo] = useState({
         email: '',
         password: ''
@@ -26,13 +28,13 @@ export const LoginForm = ({ setMode }) => {
                     value={loginInfo.password}
                     onChange={(e) => setLoginInfo(prevInfo => ({ ...prevInfo, password: e.target.value }))}
                 />
-                {error && 
-                <div className='error__container'>
-                    <p>{error}</p>
-                <i className="bi bi-x-circle-fill" onClick={() => dispatch(setError(''))}></i>
-                </div>}
-                <input type="button" value="Login" 
-                onClick={() => dispatch(loginUser(loginInfo))}
+                {error &&
+                    <div className='error__container'>
+                        <p>{error}</p>
+                        <i className="bi bi-x-circle-fill" onClick={() => dispatch(setError(''))}></i>
+                    </div>}
+                <input type="button" value="Login"
+                    onClick={() => dispatch(loginUser(loginInfo))}
                 />
             </div>
             <div className="form__footer">

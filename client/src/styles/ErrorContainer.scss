@@ -1,0 +1,21 @@
+.error__container {
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: lightpink;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
+  
+  p {
+    word-wrap:break-word;
+  }
+  
+  i {
+    color: red;
+    cursor: pointer;
+  }
+
+}

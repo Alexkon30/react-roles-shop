@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchGoods } from '../store/reducers/ActionCreators'
 import {ProductCard} from '../components/ProductCard'
 import {ModalForm} from '../components/ModalForm'
+import '../styles/ProductList.css'
 
 export const UserPage = () => {
   const [isActiveModal, setIsActiveModal] = useState(false)

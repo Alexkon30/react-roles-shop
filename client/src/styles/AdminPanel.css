@@ -1,0 +1,87 @@
+.admin-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+}
+
+.admin-panel aside {
+  width: 15%;
+  border-right: 1px solid teal;
+}
+
+.admin-panel aside p {
+  padding: 10px;
+  border: 1px solid teal;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  position: relative;
+  left: 1px;
+}
+
+.admin-panel aside p.active {
+  background-color: teal;
+}
+
+.admin-panel section {
+  padding-left: 20px;
+  width: 85%;
+}
+
+.admin-panel section table {
+  width: 100%;
+}
+
+.admin-panel section table tr {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5fr 12% 12% 12% 12%;
+      grid-template-columns: 5fr 12% 12% 12% 12%;
+}
+
+.admin-panel section table tr td,
+.admin-panel section table tr th {
+  word-wrap: break-word;
+  padding: 10px;
+  border: 1px solid teal;
+}
+
+.admin-panel section table tr td:not(:first-child),
+.admin-panel section table tr th:not(:first-child) {
+  text-align: center;
+}
+
+.admin-panel section table ol {
+  list-style-position: inside;
+}
+
+.admin-panel section i {
+  border-radius: 50%;
+}
+
+.admin-panel section i:hover {
+  cursor: pointer;
+}
+
+.admin-panel section i.finished {
+  color: green;
+}
+
+.admin-panel section i.finished:hover {
+  color: red;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.admin-panel section i.inprocess {
+  color: red;
+}
+
+.admin-panel section i.inprocess:hover {
+  color: green;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/*# sourceMappingURL=AdminPanel.css.map */

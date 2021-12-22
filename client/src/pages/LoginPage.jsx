@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { LoginForm } from '../components/LoginForm'
 import { RegisterForm } from '../components/RegisterForm'
+import '../styles/LoginContainer.css'
 
 export const LoginPage = () => {
     const [mode, setMode] = useState('login')

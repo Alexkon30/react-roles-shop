@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,aAAa,EAAE,IAAI;EACnB,KAAK,EAAE,IAAI;EACX,gBAAgB,EAAE,SAAS;EAC3B,OAAO,EAAE,GAAG;EACZ,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,aAAa;CAWtB;;AApBD,AAWE,iBAXe,CAWf,CAAC,CAAC;EACA,SAAS,EAAC,UAAU;CACrB;;AAbH,AAeE,iBAfe,CAef,CAAC,CAAC;EACA,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,OAAO;CAChB",
+    "sources": [
+        "ErrorContainer.scss"
+    ],
+    "names": [],
+    "file": "ErrorContainer.css"
+}

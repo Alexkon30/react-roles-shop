@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { userSlice } from '../store/reducers/UserSlice'
 import { newOrder } from '../store/reducers/ActionCreators'
+import '../styles/Modal.css'
 
 export const ModalForm = ({ setIsActive }) => {
   const dispatch = useDispatch()
@@ -67,7 +68,7 @@ export const ModalForm = ({ setIsActive }) => {
           <input type="button" value="Buy" onClick={() => {
             setIsActive(false)
             dispatch(newOrder(order))
-            }} />
+          }} />
         </div>
         <div className="cancel-btn" onClick={() => setIsActive(false)} >
           <i className="bi bi-x-lg"></i>

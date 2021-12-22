@@ -19,7 +19,7 @@ class loginController {
         const { username, email, password, confirmedPassword } = req.body
 
         if (password.length < 4) {
-            res.send({ success: false, message: 'Password length must be more above 3 symbols' })
+            res.send({ success: false, message: 'Password length must be above 3 symbols' })
             return
         } else if (password !== confirmedPassword) {
             res.send({ success: false, message: 'Passwords must be same' })

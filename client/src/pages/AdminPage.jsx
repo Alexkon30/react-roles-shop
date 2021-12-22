@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchOrders } from '../store/reducers/ActionCreators'
 import { changeOrderStatus } from '../store/reducers/ActionCreators'
+import '../styles/AdminPanel.css'
 
 export const AdminPage = () => {
     const [mode, setMode] = useState('all')
